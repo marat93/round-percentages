@@ -13,7 +13,7 @@ def round_percentages(percentages):
     for index, percentage in enumerate(percentages):
         integer, decimal = str(float(percentage)).split('.')
         integer = int(integer)
-        decimal = int(decimal)
+        decimal = float(f'0.{decimal}')
 
         result.append([integer, decimal, index])
         sum_of_integer_parts += integer

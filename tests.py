@@ -22,6 +22,13 @@ class TestRoundedPercentages(unittest.TestCase):
         self.assertEqual(result, input_)
         self.assertEqual(sum(result), 100)
 
+    def test_different_fractional_part_length(self):
+        input_ = [31.4952, 42.803, 25.7018]
+        self.assertEqual(sum(input_), 100)
+
+        result = round_percentages(input_)
+        self.assertEqual(result,  [31, 43, 26])
+        self.assertEqual(sum(result), 100)
 
 if __name__ == '__main__':
     unittest.main()
